@@ -1,0 +1,26 @@
+.guild {
+    position: relative;
+    flex-basis: calc(20% - 2%);
+    margin: 1%;
+
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 10px;
+
+    background-color: #2f3136;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
+
+    &:hover {
+        border: 1px solid rgb(34, 34, 34);
+    }
+}

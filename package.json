@@ -1,0 +1,31 @@
+{
+  "name": "raven-bot",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 9200",
+    "build": "next build",
+    "start": "next start -p 9200",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@prisma/client": "^3.9.1",
+    "colors": "^1.4.0",
+    "discord.js": "^13.2.0",
+    "framer-motion": "^6.2.4",
+    "next": "^11.1.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "sass": "^1.43.2",
+    "sharp": "^0.30.0",
+    "swr": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^15.14.1",
+    "@types/react": "17.0.30",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
+    "prisma": "^3.9.1",
+    "typescript": "4.4.4"
+  }
+}
