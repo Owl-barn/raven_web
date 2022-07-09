@@ -1,6 +1,6 @@
 import { Component } from "react";
-import { webLevel } from "../pages/leaderboard/[guild_id]";
-import styles from "./leaderboardUser.module.scss";
+import { webLevel } from "pages/leaderboard/[guild_id]";
+import styles from "./user.module.scss";
 
 export default class LeaderboardUser extends Component<Props> {
 
@@ -12,14 +12,13 @@ export default class LeaderboardUser extends Component<Props> {
         const entry = this.props.entry;
 
         const index = this.props.index;
-        let colour = "rgb(39, 39, 39)"
 
         return (
-            <div className={styles.main}>
-                <div className={styles.rank} style={{ backgroundColor: colour }}>{index + 1}</div>
+            <article className={styles.main}>
+                <div className={styles.rank}>{index + 1}</div>
                 <div className={styles.name}>{entry.member.displayName}</div>
                 <div className={styles.score}>{entry.experience.level}</div>
-            </div >
+            </article >
         );
     }
 }

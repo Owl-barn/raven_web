@@ -1,116 +1,120 @@
-$background: rgba(56, 56, 56);
+@use "styles/vars" as *;
 
 .main {
-    width: 100%;
-    min-height: 100vh;
-    color: wheat;
-    background-color: rgb(73, 73, 73);
-    display: flex;
-    justify-content: center;
-    flex-direction: row-reverse;
-    flex-wrap: wrap;
-    gap: 10px;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+  background-color: $primary;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .banner {
-    height: 10vh;
-    width: 100%;
+  height: 10vh;
+  width: 100%;
 }
 
 .scoreboard {
-    box-shadow: 0 0 10px 1px rgb(41, 41, 41);
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    min-height: 100vh;
-    gap: 10px;
-    background-color: $background;
-    border-radius: 5px;
-    padding: 7px 20px;
+  display: flex;
+  flex-direction: column;
+
+  width: 50%;
+  min-height: 100vh;
+  gap: 10px;
+  border-radius: 5px;
 }
 
 .info {
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 
-    & > * {
-        border-radius: 5px;
-        width: 100%;
-        min-height: 5%;
-        background-color: $background;
-        padding: 10px;
-    }
+  &>* {
+    border-radius: 5px;
+    width: 100%;
+    min-height: 5%;
+    background-color: $primary;
+    padding: 10px;
+  }
 }
 
-.mainInfo {
-    padding: 0px 10px;
-    padding-bottom: 10px;
-    & > h1 {
-        width: 100%;
-        border-bottom: solid rgb(41, 41, 41);
-        padding: 10px;
-        padding-top: 0;
-        font-size: 2rem;
-    }
-    & > h2 {
-        padding: 10px 20px;
-        font-size: 2rem;
-    }
+.guildInfo {
+  padding: 0px 10px;
+  padding-bottom: 10px;
+  background-color: $secondary;
+  border-radius: 20px;
 
-    & > p {
-        padding: 10px 20px
-    }
+  &>h1 {
+    width: 100%;
+    border-bottom: solid rgb(41, 41, 41);
+    padding: 10px;
+    padding-top: 0;
+    font-size: 2rem;
+  }
+
+  &>h2 {
+    padding: 10px 20px;
+    font-size: 2rem;
+  }
+
+  &>p {
+    padding: 10px 20px;
+  }
 }
 
 .serverIcon {
-    overflow: hidden;
-    border-radius: 50%;
-    display: block;
+  overflow: hidden;
+  border-radius: 50%;
+  display: block;
 }
 
 .serverIconContainer {
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    padding: 10%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 10%;
 }
 
 .events {
-    & > h1 {
-        padding: 1px 10px;
-        width: 100%;
-        border-bottom: solid rgb(41, 41, 41);
-    }
+  &>h1 {
+    padding: 1px 10px;
+    width: 100%;
+    border-bottom: solid rgb(41, 41, 41);
+  }
 }
 
 .blink {
-    animation: blink-animation 1.5s steps(5, start) infinite;
-    -webkit-animation: blink-animation 1.5s steps(5, start) infinite;
+  animation: blink-animation 1.5s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1.5s steps(5, start) infinite;
 }
+
 @keyframes blink-animation {
-    to {
-        visibility: hidden;
-    }
+  to {
+    visibility: hidden;
+  }
 }
+
 @-webkit-keyframes blink-animation {
-    to {
-        visibility: hidden;
-    }
+  to {
+    visibility: hidden;
+  }
 }
 
 @media only screen and (orientation: portrait) {
-    .info {
-        width: 100%;
-    }
+  .info {
+    width: 100%;
+  }
 
-    .scoreboard {
-        width: 100%;
-    }
+  .scoreboard {
+    width: 100%;
+  }
 
-    .banner {
-        height: 0;
-    }
+  .banner {
+    height: 0;
+  }
 }

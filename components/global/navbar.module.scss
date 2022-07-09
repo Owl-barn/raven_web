@@ -1,0 +1,155 @@
+@use "@styles/vars" as *;
+
+.main {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+
+    background-color: transparent;
+    transition: background-color ease-in-out 200ms;
+
+    border-bottom: none;
+    transition: border-bottom ease-in-out 400ms;
+
+    max-width: 100vw;
+    height: 150px;
+    margin-bottom: calc(-150px - 20px);
+
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 150px 1fr 100fr 1fr fit-content(150px);
+    grid-template-areas: "logo premium . invite avatar";
+    gap: 15px;
+
+    text-transform: uppercase;
+
+    &>* {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+
+        color: $text;
+        transition: color ease-in-out 200ms;
+
+        text-decoration: none;
+        font-size: 1.3rem;
+        font-weight: lighter;
+
+        transform: scale(1);
+        transition: transform ease-out 200ms;
+
+        &:hover {
+            color: $textHover;
+            stroke: $textHover;
+        }
+    }
+}
+
+.icon {
+    padding-left: 10px;
+    height: 150px;
+    width: 150px;
+
+    fill: none;
+    stroke: inherit;
+    stroke-miterlimit: 10;
+    stroke-width: 10px;
+
+    height: 80%;
+    transform: scale(1);
+    transition: transform ease-out 200ms;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.premium {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $premium;
+    stroke: $premium;
+
+    &:hover {
+        color: $premiumHover;
+        stroke: $premiumHover;
+
+        &>svg {
+            height: 60px;
+            width: 60px;
+        }
+    }
+
+    &>p {
+        padding: 5px;
+    }
+
+    &>svg {
+        height: 50px;
+        width: 50px;
+        margin-top: -8px;
+
+        transition: height, width ease-in-out 200ms;
+
+        &>* {
+            fill: none;
+            stroke: inherit;
+            stroke-miterlimit: 10;
+            stroke-width: 10px;
+        }
+    }
+}
+
+.invite {
+    grid-area: invite;
+}
+
+.avatar {
+    display: none;
+    grid-area: avatar;
+    align-self: flex-end;
+
+    & * {
+        border-radius: 100%;
+    }
+}
+
+// Phone
+@media (max-width: 640px) {
+    .main {
+        height: 100px;
+        margin-bottom: calc(-100px);
+        grid-template-columns: 100px 1fr 100fr 1fr fit-content(100px);
+        background-color: $primary;
+    }
+
+    .icon {
+        height: 100px;
+        width: 100px;
+    }
+
+    .avatar {
+        display: none;
+    }
+
+    .premium {
+        &>p {
+            font-size: .8rem;
+        }
+
+        &>svg {
+            height: 32px;
+            width: 32px;
+            margin-top: -6px;
+        }
+
+        &:hover>svg {
+            height: 48px;
+            width: 48px;
+        }
+    }
+}

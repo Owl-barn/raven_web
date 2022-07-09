@@ -1,0 +1,34 @@
+@use "styles/vars" as *;
+
+$reach: 60px;
+
+.main {
+    stroke: $text;
+
+    animation-name: move;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.stroke {
+    fill: none;
+    stroke: inherit;
+    stroke-miterlimit: 10;
+    stroke-width: 10px;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY($reach);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}

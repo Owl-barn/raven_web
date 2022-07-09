@@ -1,0 +1,138 @@
+@use "styles/vars" as *;
+
+
+.premium {
+    color: $premium;
+    text-decoration: none;
+    font-style: normal;
+
+    &:hover {
+        color: $premiumHover;
+    }
+}
+
+.main {
+    background-color: $primary;
+    min-height: 200vh;
+    padding: 200px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 100px;
+}
+
+.summary {
+
+    & h1 {
+        margin-bottom: 6px;
+    }
+
+    & p {
+        padding: 0;
+        margin: 5px 0;
+    }
+
+    * b {
+        color: $premium;
+    }
+}
+
+.divider {
+    width: 20%;
+    height: 2px;
+    background-color: $text;
+    margin: 10px 0;
+
+}
+
+
+.features {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 200px;
+
+    &>article {
+        width: 40vw;
+        max-width: 900px;
+        min-height: 100px;
+        padding: 0 8px;
+
+        display: grid;
+        grid-template-rows: 100%;
+
+        gap: 6px;
+
+        &>* {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        * h1 {
+            font-size: 2.5rem;
+            padding: 0;
+            margin: 0;
+
+            text-align: left;
+        }
+
+        * p {
+            font-size: 1.1rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        &.info {
+            grid-area: info;
+            min-width: 70%;
+        }
+
+        &>.artwork {
+            grid-area: artwork;
+            flex-direction: row;
+            align-items: center;
+            min-width: 30%;
+
+            &>* {
+                padding: 10px;
+            }
+        }
+
+        &:nth-child(even) {
+            grid-template-columns: 60% 40%;
+            grid-template-areas: "info artwork";
+        }
+
+        &:nth-child(odd) {
+            align-content: 40% 60%;
+            grid-template-areas: "artwork info";
+        }
+    }
+}
+
+// Phone
+@media (max-width: 640px) {
+    .divider {
+        display: none;
+    }
+    .features {
+        min-height: 200vh;
+        padding-top: 110px;
+
+
+        &>article {
+            width: 100vw;
+
+            * h1 {
+                font-size: 2rem;
+            }
+
+            * p {
+                font-size: .9rem;
+            }
+        }
+    }
+}

@@ -4,8 +4,9 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import React from 'react';
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../../styles/leaderboard.module.scss"
-import LeaderboardUser from '../../components/leaderboardUser.module';
+import styles from "@styles/leaderboard.module.scss"
+import LeaderboardUser from "@components/leaderboard/user.module";
+import NavBar from '@components/global/navbar.module';
 
 const api = process.env.NEXT_PUBLIC_API_URL
 
@@ -23,13 +24,15 @@ export default class leaderboard extends React.Component<Props> {
                 <Head>
                     <title>{guild.name} leaderboard</title>
                     <meta name="theme-color" content="#B5A691" />
-                    <meta name="description" content="View leaderboard..." />
+                    <meta name="description" content="View leaderboard" />
                 </Head>
-                <div className={styles.main}>
+
+                <NavBar />
+                <main className={styles.main}>
                     <section className={styles.banner}></section>
 
                     <section className={styles.info}>
-                        <section className={styles.mainInfo}>
+                        <section className={styles.guildInfo}>
                             <div className={styles.serverIconContainer}>
                                 <Image
                                     className={styles.serverIcon}
@@ -51,7 +54,7 @@ export default class leaderboard extends React.Component<Props> {
                     </section>
 
                     <section className={styles.banner}></section>
-                </div>
+                </main>
             </>
         )
     }

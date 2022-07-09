@@ -1,3 +1,5 @@
+@use "styles/vars" as *;
+
 @font-face {
   font-family: "abel";
   src: url("/abel.ttf");
@@ -10,8 +12,6 @@
   font-display: swap;
 }
 
-$text: rgb(181, 166, 145);
-
 html,
 body {
   padding: 0;
@@ -20,9 +20,17 @@ body {
 
   font-family: "abel";
   color: $text;
+  stroke: $text;
   // text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: lighter;
+
+  background: rgb(0, 0, 0) none repeat scroll 0% 0%;
+}
+
+* {
+  scrollbar-color: #454a4d #202324;
+  box-sizing: border-box;
 }
 
 a {
@@ -30,6 +38,6 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+b {
+  font-weight: 700;
 }

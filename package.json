@@ -13,7 +13,7 @@
     "colors": "^1.4.0",
     "discord.js": "^13.2.0",
     "framer-motion": "^6.2.4",
-    "next": "^11.1.4",
+    "next": "^12.2.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sass": "^1.43.2",
